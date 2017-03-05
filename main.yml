@@ -7,4 +7,6 @@
   - private_vars.yml
 
   roles:
+  - core
   - plex
+  - firewall

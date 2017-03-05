@@ -1,8 +1,4 @@
 ---
-- name: Display Ansible distribution
-  debug:
-    msg: "{{ ansible_distribution }}"
-
 # Variables
 - include_vars: "{{ item }}"
   with_first_found:
