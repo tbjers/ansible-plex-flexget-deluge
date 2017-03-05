@@ -1,0 +1,17 @@
+---
+- name: Install Python and Pip
+  package: name={{ item }} state=present
+  with_items:
+  - python2
+  - python-pip
+- name: Upgrade setuptools
+  pip: name=setuptools state=latest
+- name: Install FlexGet
+  pip: name=flexget state=latest
+- name: Run FlexGet every 30 minutes with Cron
+  cron:
+    name: flexget
+    minute: "*/30"
+    job: "/usr/local/bin/flexget --cron execute"
+    state: present
+
