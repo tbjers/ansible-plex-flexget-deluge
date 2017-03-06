@@ -78,7 +78,16 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-  
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    dnf update -y
+    dnf install python2 python2-dnf -y
+  SHELL
+
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "main.yml"
     ansible.ask_vault_pass = true

@@ -1,4 +1,14 @@
 ---
+- name: Install firewalld and its Python module
+  package: name={{ item }} state=present
+  with_items:
+  - firewalld
+  - python-firewall
+  - openssl-devel
+
+- name: Start firewalld
+  service: name=firewalld state=started
+
 - name: Enable HTTP in firewall
   firewalld: service=http zone=FedoraServer permanent=true state=enabled immediate=yes
 
