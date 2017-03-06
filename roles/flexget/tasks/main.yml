@@ -1,17 +1,28 @@
 ---
-- name: Install Python and Pip
-  package: name={{ item }} state=present
-  with_items:
-  - python2
-  - python-pip
 - name: Upgrade setuptools
   pip: name=setuptools state=latest
+
 - name: Install FlexGet
   pip: name=flexget state=latest
+
 - name: Run FlexGet every 30 minutes with Cron
   cron:
     name: flexget
     minute: "*/30"
     job: "/usr/local/bin/flexget --cron execute"
-    state: present
+    state: absent
 
+- name: Create configuration directory
+  file: path=/etc/flexget owner={{ media_user }} group={{ media_group }} state=directory
+
+# - name: Create Flexget configuration file
+#   template: src=config.yml.j2 dest=/etc/flexget/config.yml owner={{ media_user }} group={{ media_group }}
+
+- name: Remove FlexGet configuration file
+  file: path=/etc/flexget/config.yml state=absent
+
+- name: Create systemd service definition
+  template: src=flexget.service.j2 dest=/usr/lib/systemd/system/flexget.service owner=root group=root
+
+- name: Enable and start FlexGet service
+  service: name=flexget enabled=yes state=started

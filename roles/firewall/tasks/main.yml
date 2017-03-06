@@ -1,19 +1,27 @@
 ---
 - name: Enable HTTP in firewall
   firewalld: service=http zone=FedoraServer permanent=true state=enabled immediate=yes
+
 - name: Enable HTTPS in firewall
   firewalld: service=https zone=FedoraServer permanent=true state=enabled immediate=yes
+
 - name: Enable Plex web console in firewall
   firewalld: port=32400/tcp zone=FedoraServer permanent=true state=enabled immediate=yes
+
 - name: Enable Plex DLNA server UDP in firewall
   firewalld: port=1900/udp zone=FedoraServer permanent=true state=enabled immediate=yes
+
 - name: Enable Plex Home Theater in firewall
   firewalld: port=3005/tcp zone=FedoraServer permanent=true state=enabled immediate=yes
+
 - name: Enable Plex GDM network discovery in firewall
   firewalld: port=32410-32414/udp zone=FedoraServer permanent=true state=enabled immediate=yes
+
 - name: Enable Plex DLNA server TCP in firewall
   firewalld: port=32469/tcp zone=FedoraServer permanent=true state=enabled immediate=yes
+
 - name: Enable Plex Bonjour/Avahi network discovery in firewall
   firewalld: port=5353/udp zone=FedoraServer permanent=true state=enabled immediate=yes
+
 - name: Enable Deluge web console in firewall
   firewalld: port=8112/tcp zone=FedoraServer permanent=true state=enabled immediate=yes

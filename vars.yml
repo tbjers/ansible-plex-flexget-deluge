@@ -3,3 +3,4 @@ host: plex
 
 server_name: plex
 media_user: plex
+media_group: plex

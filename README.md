@@ -5,6 +5,5 @@ Installs Plex Media Server, Flexget and Deluge for a fully automated media cente
 ## Setup
 
 ```sh
-$ python setup.py <user>@<hostname>
+$ ANSIBLE_NOCOWS=1 python setup.py <user>@<hostname>
 ```
-

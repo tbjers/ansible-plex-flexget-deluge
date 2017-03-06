@@ -2,15 +2,21 @@
 - name: Install base packages
   package: name="{{ item }}" state=present
   with_items:
-  - mc
-  - lynx
+  - cockpit
   - deluge-daemon
   - deluge-web
+  - lynx
+  - mc
+  - python2
   - python-firewall
-  - cockpit
+  - python-pip
+  - vim-enhanced
+
 - name: Start Cockpit
   service: name=cockpit state=started
+
 - name: Start Deluge web
   service: name=deluge-web state=started
+
 - name: Start Deluge daemon
   service: name=deluge-daemon state=started
