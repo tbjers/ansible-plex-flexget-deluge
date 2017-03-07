@@ -1,4 +1,5 @@
 .vagrant
 *.retry
 private_vars.yml
+callback_plugins/*.pyc
 
