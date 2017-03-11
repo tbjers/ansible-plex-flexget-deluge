@@ -1,4 +1,7 @@
 ---
+- name: Upgrade pip
+  pip: name=pip state=latest
+
 - name: Upgrade setuptools
   pip: name=setuptools state=latest
 
@@ -13,13 +16,10 @@
     state: absent
 
 - name: Create configuration directory
-  file: path=/etc/flexget owner={{ media_user }} group={{ media_group }} state=directory
+  file: path=/etc/flexget owner={{ media_user }} group={{ media_group }} state=directory recurse=yes
 
-# - name: Create Flexget configuration file
-#   template: src=config.yml.j2 dest=/etc/flexget/config.yml owner={{ media_user }} group={{ media_group }}
-
-- name: Remove FlexGet configuration file
-  file: path=/etc/flexget/config.yml state=absent
+- name: Create Flexget configuration file
+  copy: src=files/flexget-config.yml dest=/etc/flexget/config.yml owner={{ media_user }} group={{ media_group }}
 
 - name: Create systemd service definition
   template: src=flexget.service.j2 dest=/usr/lib/systemd/system/flexget.service owner=root group=root

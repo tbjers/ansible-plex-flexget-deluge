@@ -1,0 +1,21 @@
+---
+- name: Set up deluge-daemon.service
+  template: src=deluge-daemon.service.j2 dest=/usr/lib/systemd/system/deluge-daemon.service owner=root group=root
+
+- name: Set up deluge-web.service
+  template: src=deluge-web.service.j2 dest=/usr/lib/systemd/system/deluge-web.service owner=root group=root
+
+- name: Set up deluge core configuration
+  template: src=core.conf.j2 dest=/var/lib/deluge/.config/deluge/core.conf owner={{ media_user }} group={{ media_group }}
+
+- name: Set up deluge web configuration
+  template: src=web.conf.j2 dest=/var/lib/deluge/.config/deluge/web.conf owner={{ media_user }} group={{ media_group }}
+
+- name: Make sure media user owns configuration
+  file: path=/var/lib/deluge owner={{ media_user }} group={{ media_group }} state=directory recurse=yes
+
+- name: Enable and start Deluge daemon service
+  service: name=deluge-daemon enabled=yes state=restarted
+
+- name: Enable and start Deluge web service
+  service: name=deluge-web enabled=yes state=restarted

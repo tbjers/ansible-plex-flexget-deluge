@@ -1,0 +1,11 @@
+[Unit]
+Description=Deluge Bittorrent Client Web Interface
+After=network.target
+
+[Service]
+User={{ media_user }}
+Group={{ media_group }}
+ExecStart=/usr/bin/deluge-web
+
+[Install]
+WantedBy=multi-user.target

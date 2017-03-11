@@ -2,4 +2,5 @@
 *.retry
 private_vars.yml
 callback_plugins/*.pyc
+files/flexget-config.yml
 
