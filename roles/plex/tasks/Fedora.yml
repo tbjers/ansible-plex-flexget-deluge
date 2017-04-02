@@ -1,7 +1,7 @@
 ---
 # Installation
 - name: Download plex
-  get_url: url={{ plex_download }} dest={{ plex_package_path }}
+  get_url: url={{ plex_download }} dest={{ plex_package_path }} checksum={{ plex_sha_checksum }}
   ignore_errors: yes
 - name: Check if Plex is installed
   command: "dpkg -s plexmediaserver"
