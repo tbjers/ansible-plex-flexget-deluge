@@ -1,3 +1,4 @@
-plex_download: https://downloads.plex.tv/plex-media-server/1.4.3.3433-03e4cfa35/plexmediaserver-1.4.3.3433-03e4cfa35.x86_64.rpm
-plex_package_path: /tmp/plexmediaserver-1.4.3.3433-03e4cfa35.x86_64.rpm
+plex_download: https://downloads.plex.tv/plex-media-server/1.5.2.3557-029f6ffbf/plexmediaserver-1.5.2.3557-029f6ffbf.x86_64.rpm
+plex_sha_checksum: bee8fe84e41230681af5c6d575400d29b4de9a21
+plex_package_path: /tmp/plexmediaserver-1.5.2.3557-029f6ffbf.x86_64.rpm
 plex_application_support_dir: "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server"
