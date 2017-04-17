@@ -1,4 +1,4 @@
-plex_download: https://downloads.plex.tv/plex-media-server/1.5.3.3580-4b377d295/plexmediaserver-1.5.3.3580-4b377d295.x86_64.rpm
-plex_sha_checksum: 5ed4c6a39ca21f6852cfe2819a9d219d7d7bd112
-plex_package_path: /tmp/plexmediaserver-1.5.3.3580-4b377d295.x86_64.rpm
+plex_download: https://downloads.plex.tv/plex-media-server/1.5.5.3634-995f1dead/plexmediaserver-1.5.5.3634-995f1dead.x86_64.rpm
+plex_sha_checksum: d41ba39ab470d37e07d26c3442b118e8e6678c52
+plex_package_path: /tmp/plexmediaserver-1.5.5.3634-995f1dead.x86_64.rpm
 plex_application_support_dir: "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server"
