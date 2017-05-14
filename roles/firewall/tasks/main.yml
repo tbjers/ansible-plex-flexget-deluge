@@ -33,5 +33,8 @@
 - name: Enable Plex Bonjour/Avahi network discovery in firewall
   firewalld: port=5353/udp zone=FedoraServer permanent=true state=enabled immediate=yes
 
+- name: Enable Plex Companion controller ports
+  firewalld: port=8324/tcp zone=FedoraServer permanent=true state=enabled immediate=yes
+
 - name: Enable Deluge web console in firewall
   firewalld: port=8112/tcp zone=FedoraServer permanent=true state=enabled immediate=yes
