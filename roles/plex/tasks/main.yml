@@ -5,6 +5,12 @@
   - "vars/{{ ansible_distribution }}.yml"
   when: plex_download is not defined or plex_path is not defined
 
+- name: Ensure that Plex group exists
+  group: name=plex state=present
+
+- name: Ensure that Plex user exists
+  user: name={{ media_user }} home=/var/lib/plexmediaserver group={{ media_group }} shell=/sbin/nologin state=present
+
 - name: Install Plex on Fedora
   dnf: name={{ plex_download }} state=present
   when: ansible_distribution == 'Fedora'
