@@ -1,4 +1,4 @@
-plex_download: https://downloads.plex.tv/plex-media-server/1.7.5.4035-313f93718/plexmediaserver_1.7.5.4035-313f93718_amd64.deb
-plex_sha_checksum: f43884732dfb1eda70329ee596666655e9c10217
-plex_package_path: /tmp/plexmediaserver_1.7.5.4035-313f93718_amd64.deb
+plex_download: https://downloads.plex.tv/plex-media-server/1.8.0.4109-42bd8c63f/plexmediaserver_1.8.0.4109-42bd8c63f_amd64.deb
+plex_sha_checksum: 20ad1987f38e94d309005b753cff2d5127497ecc
+plex_package_path: /tmp/plexmediaserver_1.8.0.4109-42bd8c63f_amd64.deb
 plex_application_support_dir: "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server"
